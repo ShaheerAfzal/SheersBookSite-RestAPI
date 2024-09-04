@@ -87,4 +87,4 @@ This project is an API developed using the Django REST Framework. It serves as a
 - *Distinction between **Normal users**, **Stores** & **SuperUsers*** 
 
 ## Future Ideas
-- ***(Will add any future ideas or inprogress implementations here***
+- ***Will add any future ideas or inprogress implementations here***
