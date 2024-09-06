@@ -54,25 +54,26 @@ This project is an API developed using the Django REST Framework. It serves as a
 - **Delete Book:** `DELETE /api/books/{id}/`
 
 ### Reviews
-- **List Reviews:** `GET /api/reviews/`
-- **Retrieve Review:** `GET /api/reviews/{id}/`
-- **Create Review:** `POST /api/reviews/`
-- **Update Review:** `PUT /api/reviews/{id}/`
-- **Delete Review:** `DELETE /api/reviews/{id}/`
-- **List Reviews for Book:** `GET /api/reviews/book/{book_id}/`
+- **List Reviews:** `GET /api/books/Reviews/all`
+- **Retrieve Review:** `GET /api/books/Reviews/{id}/`
+- **Create Review:** `POST /api/books/Reviews/`
+- **Update Review:** `PUT /api/books/Reviews/{id}/`
+- **Delete Review:** `DELETE /api/books/Reviews/{id}/`
+- **List Reviews for Book:** `GET /api/books/Reviews/book/{book_id}/`
 
 ### Stores
-- **List Stores:** `GET /api/stores/`
-- **Retrieve Store:** `GET /api/stores/{id}/`
-- **Create Store:** `POST /api/stores/`
-- **Update Store:** `PUT /api/stores/{id}/`
-- **Delete Store:** `DELETE /api/stores/{id}/`
-- **List Stores for Book:** `GET /api/stores/book/{book_id}/`
+- **List Stores:** `GET /api/books/Stores/all`
+- **Retrieve Store:** `GET /api/books/Stores/{id}/`
+- **Create Store:** `POST /api/books/Stores/`
+- **Update Store:** `PUT /api/books/Stores/{id}/`
+- **Delete Store:** `DELETE /api/books/Stores/{id}/`
+- **List Stores for Book:** `GET /api/books/Stores/book/{book_id}/`
 
 ## Authentication and Authorization
 
 - **Superuser Access:** Allows for the creation, update, and deletion of books and stores.
 - **User Access:** Allows for adding and managing reviews.
+- **Store Access:** Allows for stores to manage their information and inventory. 
 
 ## Implementation Details
 
