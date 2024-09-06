@@ -47,7 +47,7 @@ This project is an API developed using the Django REST Framework. It serves as a
 ## API Endpoints
 
 ### Books
-- **List Books:** `GET /api/books/`
+- **List Books:** `GET /api/books/all`
 - **Retrieve Book:** `GET /api/books/{id}/`
 - **Create Book:** `POST /api/books/`
 - **Update Book:** `PUT /api/books/{id}/`
