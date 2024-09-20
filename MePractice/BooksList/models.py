@@ -4,6 +4,7 @@ from django.db.models.deletion import CASCADE
 from django.db.models import Avg
 from django.core.exceptions import ValidationError
 from django.utils import timezone
+from django.conf import settings  # Import settings for AUTH_USER_MODEL
 
 # Create your models here.
 
@@ -28,7 +29,7 @@ class Books(models.Model):
     
 class bookReviews(models.Model):
     Book = models.ForeignKey(Books, on_delete=CASCADE, related_name='Reviews')
-    Review_User = models.ForeignKey(User, on_delete=CASCADE)
+    Review_User = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=CASCADE)
     Rating = models.IntegerField(default=1, choices=[(i, str(i)) for i in range(1, 6)])
     Review = models.TextField(blank=True, null=True)
     DateAdded = models.DateTimeField(default=timezone.now)

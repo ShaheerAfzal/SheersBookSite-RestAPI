@@ -20,5 +20,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include("bookAPI.urls")),
-    path('api/books/', include("BooksList.urls"))
+    path('api/books/', include("BooksList.urls")),
+    path('api/Users/', include("JwtAuthenticationConfig.urls")),
 ]

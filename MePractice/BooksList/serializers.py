@@ -4,7 +4,6 @@ from .models import Books, bookReviews, Stores
 
         
 class bookReviewSerializer(serializers.ModelSerializer):
-    # Discount = serializers.SerializerMethodField(read_only=True)
     class Meta:
         model = bookReviews
         fields = [
@@ -17,7 +16,6 @@ class bookReviewSerializer(serializers.ModelSerializer):
             ]
         
 class StoreSerializer(serializers.ModelSerializer):
-    # Discount = serializers.SerializerMethodField(read_only=True)
     class Meta:
         model = Stores
         fields = [
