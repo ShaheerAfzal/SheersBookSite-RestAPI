@@ -69,8 +69,13 @@ This project is an API developed using the Django REST Framework. It serves as a
 - **Delete Store:** `DELETE /api/books/Stores/{id}/`
 - **List Stores for Book:** `GET /api/books/Stores/book/{book_id}/`
 
-## Authentication and Authorization
+### Authentication
+- **User Profile:** `GET /api/User/profile`
+- **Log In:** `POST /api/User/login/`
+- **Register:** `POST /api/User/register/`
 
+## Authorization
+*currently not implemented*
 - **Superuser Access:** Allows for the creation, update, and deletion of books and stores.
 - **User Access:** Allows for adding and managing reviews.
 - **Store Access:** Allows for stores to manage their information and inventory. 
@@ -84,8 +89,7 @@ This project is an API developed using the Django REST Framework. It serves as a
 
 ## Currently UnImplemented Features
 
-- *User Authentication*
-- *Distinction between **Normal users**, **Stores** & **SuperUsers*** 
+- *levels of authorization i.e **Normal users**, **Stores** & **SuperUsers*** 
 
 ## Future Ideas
-- ***Will add any future ideas or inprogress implementations here***
+- ***Collections***
