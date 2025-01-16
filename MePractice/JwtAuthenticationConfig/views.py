@@ -1,4 +1,4 @@
-from django.contrib.auth.models import User
+from .models import User
 from rest_framework import generics, status
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
@@ -6,12 +6,15 @@ from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth import authenticate
 
+from .emails import *
+
 
 from .serializers import (
     CustomTokenObtainPairSerializer,
     ProfileSerializer,
     RegisterSerializer,
-    LoginSerializer
+    LoginSerializer,
+    UserSerializer
 )
 
 
@@ -28,7 +31,19 @@ class RegisterView(generics.CreateAPIView):
     queryset = User.objects.all()
     permission_classes = (AllowAny,)
     serializer_class = RegisterSerializer
-
+    # def post(self, request):
+    #     try:
+    #         data = request.data
+    #         serializer = UserSerializer(data=data)
+    #         if serializer.is_valid():
+    #             # Assuming send_otp_via_email is a function to send the OTP
+    #             send_otp_via_email(serializer.data['email'])  
+    #         return Response({
+    #                 'status': status.HTTP_200_OK,
+    #                 'message': "Registeration succesful, check email for verification otp",
+    #             })
+    #     except Exception as e:
+    #         return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 class ProfileView(generics.RetrieveUpdateAPIView):
     queryset = User.objects.all()
@@ -49,15 +64,16 @@ class ProfileView(generics.RetrieveUpdateAPIView):
 class LoginView(generics.GenericAPIView):
     permission_classes = (AllowAny,)
     serializer_class = LoginSerializer
-
     def post(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        username = serializer.validated_data['username']
+        email = serializer.validated_data['email']
+        print(email)
         password = serializer.validated_data['password']
+        print(password)
 
-        user = authenticate(username=username, password=password)
-
+        user = authenticate(email=email, password=password)
+        print(user)
         if user is not None:
             refresh = RefreshToken.for_user(user)
             return Response({
