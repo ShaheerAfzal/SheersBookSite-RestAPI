@@ -73,9 +73,9 @@ This project is an API developed using the Django REST Framework. It serves as a
 - **User Profile:** `GET /api/User/profile`
 - **Log In:** `POST /api/User/login/`
 - **Register:** `POST /api/User/register/`
+- **OTP verification:** Allows user to verify themselves based on a unique otp at registeration.
 
 ## Authorization
-*currently not implemented*
 - **Superuser Access:** Allows for the creation, update, and deletion of books and stores.
 - **User Access:** Allows for adding and managing reviews.
 - **Store Access:** Allows for stores to manage their information and inventory. 
