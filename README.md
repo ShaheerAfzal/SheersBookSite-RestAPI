@@ -89,7 +89,7 @@ This project is an API developed using the Django REST Framework. It serves as a
 
 ## Currently UnImplemented Features
 
-- *levels of authorization i.e **Normal users**, **Stores** & **SuperUsers*** 
+- *levels of authorization i.e **Normal users** & **Stores** 
 
 ## Future Ideas
 - ***Collections***
